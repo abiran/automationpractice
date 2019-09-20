@@ -21,27 +21,27 @@ public class SignInPage extends BasePage {
         super( driver );
     }
 
-    public void clickCreateAccountEmailAddress{
+    public void clickCreateAccountEmailAddress(){
         getDriver().findElement(By.cssSelector(createAccountEmailAddressCSS)).click();
     }
 
-    public void clickCreateAccountButton{
+    public void clickCreateAccountButton(){
         getDriver().findElement(By.cssSelector(createAccountButtonCSS)).click();
     }
 
-    public void clickAlreadyRegisteredEmailAddress{
+    public void clickAlreadyRegisteredEmailAddress(){
         getDriver().findElement(By.cssSelector(alreadyRegisteredEmailAddressCSS)).click();
     }
 
-    public void clickAlreadyRegisteredPassword{
+    public void clickAlreadyRegisteredPassword(){
         getDriver().findElement(By.cssSelector(alreadyRegisteredPasswordCSS)).click();
     }
 
-    public void clickAlreadyRegisteredForgotPasswordURL{
+    public void clickAlreadyRegisteredForgotPasswordURL(){
         getDriver().findElement(By.cssSelector(alreadyRegisteredForgotPasswordCSS)).click();
     }
 
-    public void clickAlreadyRegisteredSignInButton{
+    public void clickAlreadyRegisteredSignInButton(){
         getDriver().findElement(By.cssSelector(alreadyRegisteredSignInButtonCSS)).click();
     }
 
