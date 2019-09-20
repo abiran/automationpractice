@@ -3,6 +3,8 @@ package pageobjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+
+// Jorge Valdez
 public class MyAccountPage extends BasePage{
 
     String btnOrderHistory = "#center_column > div > div:nth-child(1) > ul > li:nth-child(1) > a > span";
