@@ -45,4 +45,9 @@ public class SignInPage extends BasePage {
         getDriver().findElement(By.cssSelector(alreadyRegisteredSignInButtonCSS)).click();
     }
 
+    public void sendKeysCreateAccountEmailAddress(String email){
+        getDriver().findElement(By.cssSelector(createAccountEmailAddressCSS)).sendKeys(email);
+    }
+
+
 }
