@@ -1,5 +1,6 @@
 package pageobjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class BasePage {
@@ -13,4 +14,9 @@ public class BasePage {
     public WebDriver getDriver(){
         return _driver;
     }
+
+    public void click(String cssSelector){
+        _driver.findElement(By.cssSelector(cssSelector)).click();
+    }
+
 }
