@@ -1,6 +1,7 @@
 package pageobjects;
 
 public class CreateAccountPage {
+//miriam
 
     String firstNameAddress = "#firstname.form-control";
     String lastNameAddress = "#lastname.form-control";
