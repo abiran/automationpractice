@@ -1,5 +1,6 @@
 package pageobjects;
 
+//Miriam Corona & Jorge Fimbres
 public class CreateAccountPage {
 
     String firstNameAddress = "#firstname.form-control";
@@ -16,7 +17,18 @@ public class CreateAccountPage {
     String mobilePhoneAddress = "#phone_mobile.form-control";
     String addressAliasAddress = "#alias.form-control";
     String registerButton = "#submitAccount";
-
+    String radioButtonMr = "#id_gender1";
+    String radioButtonMrs = "#id_gender2";
+    String firstName = "#customer_firstname";
+    String lastName = "#customer_lastname";
+    String email = "#email";
+    String password = "#passwd";
+    String days = "#days";
+    String months = "#months";
+    String days = "#days";
+    String years = "#years";
+    String newsletter = "#newsletter";
+    String option1 = "#optin";
 
 
 }
