@@ -1,8 +1,11 @@
 package pageobjects;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class CreateAccountPage extends BasePage {
+
 //Miriam Corona & Jorge Fimbres
-public class CreateAccountPage {
-//miriam
 
     String firstNameAddress = "#firstname.form-control";
     String lastNameAddress = "#lastname.form-control";
@@ -26,10 +29,21 @@ public class CreateAccountPage {
     String password = "#passwd";
     String days = "#days";
     String months = "#months";
-    String days = "#days";
     String years = "#years";
     String newsletter = "#newsletter";
     String option1 = "#optin";
+
+    public CreateAccountPage(WebDriver driver) {
+        super(driver);
+    }
+
+    public void typeFirstNameAddress(){
+        getDriver().findElement(By.id(firstNameAddress)).sendKeys("Miriam");
+    }
+
+    public void typeLastNameAddress(){
+        getDriver().findElement(By.id(lastNameAddress)).sendKeys("Corona");
+    }
 
 
 }
