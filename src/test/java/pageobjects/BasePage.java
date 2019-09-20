@@ -1,4 +1,7 @@
 package pageobjects;
 
 public class BasePage {
+
+    // comentario
+
 }
