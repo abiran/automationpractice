@@ -18,6 +18,10 @@ public class AuthenticationTest extends BaseTest {
 
     @Test
     public void createAccountWithEmptyEmail(){
+        SignInPage signInPage = new SignInPage(getWebDriver());
+
+        signInPage.clickCreateAccountButton();
+        assertTrue(signInPage.createAccountError());
     }
 
     @Test
