@@ -44,31 +44,31 @@ public class CreateAccountPage extends BasePage {
 
     // Your Address
 
-    public void typeFirstNameAddress(){
-        getDriver().findElement(By.id(firstNameAddress)).sendKeys("Miriam");
+    public void typeFirstNameAddress(String firstNameAddressValue){
+        getDriver().findElement(By.id(firstNameAddress)).sendKeys(firstNameAddressValue);
     }
 
-    public void typeLastNameAddress(){
-        getDriver().findElement(By.id(lastNameAddress)).sendKeys("Corona");
+    public void typeLastNameAddress(String lastNameAddressValue){
+        getDriver().findElement(By.id(lastNameAddress)).sendKeys(lastNameAddressValue);
     }
 
-    public void typeCompanyNameAddress(){
-        getDriver().findElement(By.id(companyNameAddress)).sendKeys("Nearsoft");
+    public void typeCompanyNameAddress(String companyNameAddressValue){
+        getDriver().findElement(By.id(companyNameAddress)).sendKeys(companyNameAddressValue);
     }
 
-    public void typeAddress1Address(){
-        getDriver().findElement(By.id(address1Address)).sendKeys("Blvd. Quiroga 21");
+    public void typeAddress1Address(String address1AddressValue){
+        getDriver().findElement(By.id(address1Address)).sendKeys(address1AddressValue);
     }
 
-    public void typeAddress2Address(){
-        getDriver().findElement(By.id(address2Address)).sendKeys("Int. 1");
+    public void typeAddress2Address(String address2AddressValue){
+        getDriver().findElement(By.id(address2Address)).sendKeys(address2AddressValue);
     }
 
-    public void typeCityAddress(){
-        getDriver().findElement(By.id(cityAddress)).sendKeys("Phoenix");
+    public void typeCityAddress(String cityAddressValue){
+        getDriver().findElement(By.id(cityAddress)).sendKeys(cityAddressValue);
     }
 
-    public void selectStateAddress(){
-        getDriver().findElement(By.id(stateDropdownAddress)).sendKeys("AZ");
+    public void selectStateAddress(String option){
+        dropdownSelect("#id_contact", option);
     }
 }
