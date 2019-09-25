@@ -7,14 +7,13 @@ import org.openqa.selenium.WebDriver;
 
 public class SignInPage extends BasePage {
 
-    String headerTextCSS = "#center_column > .page-heading";
+    String headerTextCSS = "#center_column h1";
     String createAccountEmailAddressCSS = "#email_create";
     String createAccountButtonCSS = "#SubmitCreate";
     String alreadyRegisteredEmailAddressCSS = "#email";
     String alreadyRegisteredPasswordCSS = "#passwd";
     String alreadyRegisteredForgotPasswordCSS = "#login_form div p:nth-child(1)";
     String alreadyRegisteredSignInButtonCSS = "#SubmitLogin";
-
 
 
     public SignInPage(WebDriver driver) {
