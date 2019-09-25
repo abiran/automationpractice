@@ -22,8 +22,10 @@ public class SignInPage extends BasePage {
         super( driver );
     }
 
-    public void getHeaderText(){
-        getDriver().findElement(By.cssSelector(headerText)).getText();
+    public String getHeaderText(){
+        String headerTxt="";
+        headerTxt = getDriver().findElement(By.cssSelector(headerText)).getText();
+        return headerTxt;
     }
 
     public void clickCreateAccountEmailAddress(){
