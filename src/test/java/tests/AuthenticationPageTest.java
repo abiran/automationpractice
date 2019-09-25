@@ -13,7 +13,7 @@ public class AuthenticationPageTest extends BaseTest {
 
     @Test
 
-    public void IsAuthenticationPageDisplayed(){
+    public void IsAuthenticationPageDisplayed() throws InterruptedException {
 
         HomePage homePage = new HomePage(getWebDriver());
         SignInPage signInPage = new SignInPage(getWebDriver());
