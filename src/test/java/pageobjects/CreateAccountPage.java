@@ -39,10 +39,37 @@ public class CreateAccountPage extends BasePage {
     }
 
     // Your personal information
+    public void selectGenderMale() {
+        getDriver().findElement(By.id(radioButtonMr)).click();
+    }
 
+    public void selectGenderFemale() {
+        getDriver().findElement(By.id(radioButtonMrs)).click();
+    }
 
+    public void typeFirstNameCustomer(String firstNameCustomer){
+        getDriver().findElement(By.id(firstName)).sendKeys(firstNameCustomer);
+    }
 
-    // Your Address
+    public void typeLastNameCustomer(String lastNameCustomer){
+        getDriver().findElement(By.id(lastName)).sendKeys(lastNameCustomer);
+    }
+
+    public void typeEmail(String customerEmail){
+        getDriver().findElement(By.id(email)).sendKeys(customerEmail);
+    }
+
+    public void typePassword(String customerPassword){
+        getDriver().findElement(By.id(password)).sendKeys(customerPassword);
+    }
+
+    public void setDOB(String dayDOB, String monthDOB, String yearDOB){
+        getDriver().findElement(By.id(days)).sendKeys(dayDOB);
+        getDriver().findElement(By.id(months)).sendKeys(monthDOB);
+        getDriver().findElement(By.id(years)).sendKeys(yearDOB);
+    }
+
+        // Your Address
 
     public void typeFirstNameAddress(String firstNameAddressValue){
         getDriver().findElement(By.id(firstNameAddress)).sendKeys(firstNameAddressValue);
