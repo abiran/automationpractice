@@ -29,4 +29,10 @@ public class HomePage extends BasePage {
 
     }
 
+    public void SignInClick() {
+
+        getDriver().findElement(SignInLocator).click();
+
+    }
+
 }
