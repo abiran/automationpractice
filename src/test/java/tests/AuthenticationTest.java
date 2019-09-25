@@ -17,7 +17,13 @@ public class AuthenticationTest extends BaseTest {
     }
 
     @Test
-    public void createAccountWithEmptyEmail(){
+    public void createAccountWithEmptyEmail() throws InterruptedException {
+        SignInPage signInPage = new SignInPage(getWebDriver());
+        HomePage homePage = new HomePage(getWebDriver());
+        homePage.SignInClick();
+        signInPage.clickCreateAccountButton();
+        wait3Secs();
+        assertTrue(signInPage.createAccountError());
     }
 
     @Test
