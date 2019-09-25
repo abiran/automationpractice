@@ -38,6 +38,12 @@ public class CreateAccountPage extends BasePage {
         super(driver);
     }
 
+    // Your personal information
+
+
+
+    // Your Address
+
     public void typeFirstNameAddress(){
         getDriver().findElement(By.id(firstNameAddress)).sendKeys("Miriam");
     }
