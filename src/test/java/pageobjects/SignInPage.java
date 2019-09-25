@@ -14,6 +14,7 @@ public class SignInPage extends BasePage {
     String alreadyRegisteredPasswordCSS = "#passwd";
     String alreadyRegisteredForgotPasswordCSS = "#login_form div p:nth-child(1)";
     String alreadyRegisteredSignInButtonCSS = "#SubmitLogin";
+    String createAccountErrorCSS = "#create_account_error";
 
 
     public SignInPage(WebDriver driver) {
@@ -53,6 +54,10 @@ public class SignInPage extends BasePage {
 
     public void sendKeysCreateAccountEmailAddress(String email){
         getDriver().findElement(By.cssSelector(createAccountEmailAddressCSS)).sendKeys(email);
+    }
+
+    public Boolean createAccountError(){
+        return getDriver().findElement(By.cssSelector(createAccountErrorCSS)).isDisplayed();
     }
 
 
