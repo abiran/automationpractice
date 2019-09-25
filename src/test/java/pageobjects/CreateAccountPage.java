@@ -52,5 +52,23 @@ public class CreateAccountPage extends BasePage {
         getDriver().findElement(By.id(lastNameAddress)).sendKeys("Corona");
     }
 
+    public void typeCompanyNameAddress(){
+        getDriver().findElement(By.id(companyNameAddress)).sendKeys("Nearsoft");
+    }
 
+    public void typeAddress1Address(){
+        getDriver().findElement(By.id(address1Address)).sendKeys("Blvd. Quiroga 21");
+    }
+
+    public void typeAddress2Address(){
+        getDriver().findElement(By.id(address2Address)).sendKeys("Int. 1");
+    }
+
+    public void typeCityAddress(){
+        getDriver().findElement(By.id(cityAddress)).sendKeys("Phoenix");
+    }
+
+    public void selectStateAddress(){
+        getDriver().findElement(By.id(stateDropdownAddress)).sendKeys("AZ");
+    }
 }
