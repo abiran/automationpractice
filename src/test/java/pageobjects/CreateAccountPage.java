@@ -39,36 +39,63 @@ public class CreateAccountPage extends BasePage {
     }
 
     // Your personal information
-
-
-
-    // Your Address
-
-    public void typeFirstNameAddress(){
-        getDriver().findElement(By.id(firstNameAddress)).sendKeys("Miriam");
+    public void selectGenderMale() {
+        getDriver().findElement(By.id(radioButtonMr)).click();
     }
 
-    public void typeLastNameAddress(){
-        getDriver().findElement(By.id(lastNameAddress)).sendKeys("Corona");
+    public void selectGenderFemale() {
+        getDriver().findElement(By.id(radioButtonMrs)).click();
     }
 
-    public void typeCompanyNameAddress(){
-        getDriver().findElement(By.id(companyNameAddress)).sendKeys("Nearsoft");
+    public void typeFirstNameCustomer(String firstNameCustomer){
+        getDriver().findElement(By.id(firstName)).sendKeys(firstNameCustomer);
     }
 
-    public void typeAddress1Address(){
-        getDriver().findElement(By.id(address1Address)).sendKeys("Blvd. Quiroga 21");
+    public void typeLastNameCustomer(String lastNameCustomer){
+        getDriver().findElement(By.id(lastName)).sendKeys(lastNameCustomer);
     }
 
-    public void typeAddress2Address(){
-        getDriver().findElement(By.id(address2Address)).sendKeys("Int. 1");
+    public void typeEmail(String customerEmail){
+        getDriver().findElement(By.id(email)).sendKeys(customerEmail);
     }
 
-    public void typeCityAddress(){
-        getDriver().findElement(By.id(cityAddress)).sendKeys("Phoenix");
+    public void typePassword(String customerPassword){
+        getDriver().findElement(By.id(password)).sendKeys(customerPassword);
     }
 
-    public void selectStateAddress(){
-        getDriver().findElement(By.id(stateDropdownAddress)).sendKeys("AZ");
+    public void setDOB(String dayDOB, String monthDOB, String yearDOB){
+        getDriver().findElement(By.id(days)).sendKeys(dayDOB);
+        getDriver().findElement(By.id(months)).sendKeys(monthDOB);
+        getDriver().findElement(By.id(years)).sendKeys(yearDOB);
+    }
+
+        // Your Address
+
+    public void typeFirstNameAddress(String firstNameAddressValue){
+        getDriver().findElement(By.id(firstNameAddress)).sendKeys(firstNameAddressValue);
+    }
+
+    public void typeLastNameAddress(String lastNameAddressValue){
+        getDriver().findElement(By.id(lastNameAddress)).sendKeys(lastNameAddressValue);
+    }
+
+    public void typeCompanyNameAddress(String companyNameAddressValue){
+        getDriver().findElement(By.id(companyNameAddress)).sendKeys(companyNameAddressValue);
+    }
+
+    public void typeAddress1Address(String address1AddressValue){
+        getDriver().findElement(By.id(address1Address)).sendKeys(address1AddressValue);
+    }
+
+    public void typeAddress2Address(String address2AddressValue){
+        getDriver().findElement(By.id(address2Address)).sendKeys(address2AddressValue);
+    }
+
+    public void typeCityAddress(String cityAddressValue){
+        getDriver().findElement(By.id(cityAddress)).sendKeys(cityAddressValue);
+    }
+
+    public void selectStateAddress(String option){
+        dropdownSelect("#id_contact", option);
     }
 }
