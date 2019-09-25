@@ -96,6 +96,27 @@ public class CreateAccountPage extends BasePage {
     }
 
     public void selectStateAddress(String option){
-        dropdownSelect("#id_contact", option);
+        dropdownSelect(stateDropdownAddress, option);
+    }
+
+
+    public void typeZipCodeAddress(String zipCodeAddressValue){
+        getDriver().findElement(By.id(zipCodeAddress)).sendKeys(zipCodeAddressValue);
+    }
+
+    public void selectCountryAddress(String option){
+        dropdownSelect(countryDropdownAddress, option);
+    }
+
+    public void typeMobilePhoneAddress(String mobilePhoneAddressValue){
+        getDriver().findElement(By.id(mobilePhoneAddress)).sendKeys(mobilePhoneAddressValue);
+    }
+
+    public void typeAliasAddress(String aliasAddressValue){
+        getDriver().findElement(By.id(addressAliasAddress)).sendKeys(aliasAddressValue);
+    }
+
+    public void clickRegisterButton(){
+        getDriver().findElement(By.id(registerButton)).click();
     }
 }
