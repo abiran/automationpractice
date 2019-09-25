@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 
 public class SignInPage extends BasePage {
 
+    String headerText = "#center_column > h1";
     String createAccountEmailAddressCSS = "#email_create";
     String createAccountButtonCSS = "#SubmitCreate";
     String alreadyRegisteredEmailAddressCSS = "#email";
@@ -19,6 +20,10 @@ public class SignInPage extends BasePage {
     public SignInPage(WebDriver driver) {
 
         super( driver );
+    }
+
+    public void getHeaderText(){
+        getDriver().findElement(By.cssSelector(headerText)).getText();
     }
 
     public void clickCreateAccountEmailAddress(){
