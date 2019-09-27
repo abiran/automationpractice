@@ -132,6 +132,7 @@ public class CreateAccountPage extends BasePage {
     //added by Lemma
     public String getAlertMessage() {return getDriver().findElement(alert_danger).getText();}
 
+    //added by miriam
     public Boolean isPageTitleDisplayed() {
         WebElement title = getDriver().findElement(By.cssSelector(pageTitle));
         return title.getText().equals("CREATE AN ACCOUNT");
