@@ -7,8 +7,8 @@ public class CreateAccountPage extends BasePage {
 
 //Miriam Corona & Jorge Fimbres
 
-    String radioButtonMr = "#id_gender1";
-    String radioButtonMrs = "#id_gender2";
+    String radioButtonMr = "id_gender1";
+    String radioButtonMrs = "id_gender2";
     String firstName = "customer_firstname";
     String lastName = "customer_lastname";
     String email = "email";
