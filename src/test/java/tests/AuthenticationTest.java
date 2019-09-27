@@ -1,6 +1,7 @@
 package tests;
 
 import org.testng.annotations.Test;
+import pageobjects.CreateAccountPage;
 import pageobjects.HomePage;
 import pageobjects.SignInPage;
 
@@ -46,13 +47,23 @@ public class AuthenticationTest extends BaseTest {
         HomePage homePage = new HomePage(getWebDriver());
 
         homePage.SignInClick();
-        signInPage.sendKeysCreateAccountEmailAddress("mcorona+test@nearsoft.com");
+        signInPage.sendKeysCreateAccountEmailAddress("miriam_nearsoft@mailinator.com");
         signInPage.clickCreateAccountButton();
         wait3Secs();
         assertTrue(signInPage.createAccountError());
     }
 
     @Test
-    public void createAccountWithValidEmail(){}
+    public void createAccountWithValidEmail() throws InterruptedException {
+        SignInPage signInPage = new SignInPage(getWebDriver());
+        HomePage homePage = new HomePage(getWebDriver());
+        CreateAccountPage createAccountPage = new CreateAccountPage(getWebDriver());
+
+        homePage.SignInClick();
+        signInPage.sendKeysCreateAccountEmailAddress("mcorona_test@mailinator.com");
+        signInPage.clickCreateAccountButton();
+        wait3Secs();
+        assertTrue(createAccountPage.isPageTitleDisplayed());
+    }
 
 }

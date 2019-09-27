@@ -2,11 +2,13 @@ package pageobjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class CreateAccountPage extends BasePage {
 
 //Miriam Corona & Jorge Fimbres
 
+    String pageTitle = ".page-heading";
     String radioButtonMr = "id_gender1";
     String radioButtonMrs = "id_gender2";
     String firstName = "customer_firstname";
@@ -127,5 +129,11 @@ public class CreateAccountPage extends BasePage {
 
     //added by Lemma
     public String getAlertMessage() {return getDriver().findElement(alert_danger).getText();}
+
+    //added by miriam
+    public Boolean isPageTitleDisplayed() {
+        WebElement title = getDriver().findElement(By.cssSelector(pageTitle));
+        return title.getText().equals("CREATE AN ACCOUNT");
+    }
 
 }
