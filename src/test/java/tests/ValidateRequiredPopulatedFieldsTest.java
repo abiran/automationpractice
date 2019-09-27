@@ -25,21 +25,13 @@ public class ValidateRequiredPopulatedFieldsTest extends BaseTest {
     createAccountPage.clickRegisterButton();
 
     assertTrue(createAccountPage.isAlertDisplayed());
-
     assertTrue(createAccountPage.getAlertMessage().contains("must register at least one phone number"));
-
     assertTrue(createAccountPage.getAlertMessage().contains("lastname is required"));
-
     assertTrue(createAccountPage.getAlertMessage().contains("firstname is required"));
-
     assertTrue(createAccountPage.getAlertMessage().contains("passwd is required"));
-
     assertTrue(createAccountPage.getAlertMessage().contains("address1 is required"));
-
     assertTrue(createAccountPage.getAlertMessage().contains("city is required"));
-
     assertTrue(createAccountPage.getAlertMessage().contains("Zip/Postal code you've entered is invalid"));
-
     assertTrue(createAccountPage.getAlertMessage().contains("requires you to choose a State"));
 
    }
