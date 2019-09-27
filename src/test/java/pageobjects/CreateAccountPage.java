@@ -2,6 +2,7 @@ package pageobjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class CreateAccountPage extends BasePage {
 
@@ -130,5 +131,10 @@ public class CreateAccountPage extends BasePage {
 
     //added by Lemma
     public String getAlertMessage() {return getDriver().findElement(alert_danger).getText();}
+
+    public Boolean isPageTitleDisplayed() {
+        WebElement title = getDriver().findElement(By.cssSelector(pageTitle));
+        return title.getText().equals("CREATE AN ACCOUNT");
+    }
 
 }
