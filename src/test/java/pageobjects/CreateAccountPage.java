@@ -125,4 +125,8 @@ public class CreateAccountPage extends BasePage {
     public Boolean isAlertDisplayed(){
        return getDriver().findElement(alert_danger).isDisplayed();
     }
+
+    //added by Lemma
+    public String getAlertMessage() {return getDriver().findElement(alert_danger).getText();}
+
 }
