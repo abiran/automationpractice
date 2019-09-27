@@ -1,10 +1,8 @@
 package tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
-import pageobjects.CreateAccountPage;
-import pageobjects.HomePage;
-import pageobjects.MyAccountPage;
-import pageobjects.SignInPage;
+import pageobjects.*;
 
 import static org.testng.Assert.assertTrue;
 
@@ -43,6 +41,9 @@ public class CreateAccountSuccessfullyTest extends BaseTest{
         MyAccountPage myAccountPage = new MyAccountPage(getWebDriver());
 
         assertTrue(myAccountPage.getHeaderText().equals("MY ACCOUNT"));
+
+        ConfirmationPage confirmationPage = new ConfirmationPage(getWebDriver());
+        Assert.assertTrue(confirmationPage.confirmUserLogged());
 
         System.out.println("rtr");
 
