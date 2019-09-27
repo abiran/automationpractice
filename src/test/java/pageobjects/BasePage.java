@@ -22,7 +22,7 @@ public class BasePage {
     }
 
     public void dropdownSelect(String element, String option){
-        WebElement dropdown = _driver.findElement(By.cssSelector(element));
+        WebElement dropdown = _driver.findElement(By.id(element));
         Select dropdownSelect = new Select(dropdown);
         dropdownSelect.selectByVisibleText(option);
     }
