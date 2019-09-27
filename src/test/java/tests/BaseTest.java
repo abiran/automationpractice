@@ -4,6 +4,7 @@ import java.security.SecureRandom;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -16,7 +17,7 @@ public class BaseTest {
 //        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/vendor/chromedriver");
 //        vendor no longer needed
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(); //you could send setupChromeOptions as param
         driver.get("http://automationpractice.com/index.php");
         wait3Secs();
     }
@@ -24,6 +25,12 @@ public class BaseTest {
     @AfterTest
     public void tearDown() {
         driver.quit();
+    }
+
+    public ChromeOptions setupChromeOptions(){
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments( "--headless" );
+        return options;
     }
 
     public WebDriver getWebDriver(){
@@ -45,7 +52,7 @@ public class BaseTest {
             // 0-62 (exclusive), random returns 0-61
             int rndCharAt = random.nextInt(DATA_FOR_RANDOM_STRING.length());
             char rndChar = DATA_FOR_RANDOM_STRING.charAt(rndCharAt);
-            // debug
+            // debugx
             sb.append(rndChar);
         }
         return sb.toString() + "@testing.com";
