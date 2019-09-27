@@ -1,6 +1,8 @@
 package tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import pageobjects.ConfirmationPage;
 import pageobjects.CreateAccountPage;
 import pageobjects.HomePage;
 import pageobjects.SignInPage;
@@ -14,7 +16,7 @@ public class CreateAccountFormatTest extends BaseTest {
         homePage.SignInClick();
         wait3Secs();
         SignInPage signInPage = new SignInPage(getWebDriver());
-        signInPage.sendKeysCreateAccountEmailAddress("alejandro@gmail.com");
+        signInPage.sendKeysCreateAccountEmailAddress(getRandomEmail());
         signInPage.clickCreateAccountButton();
         wait3Secs();
 
@@ -31,6 +33,14 @@ public class CreateAccountFormatTest extends BaseTest {
         createAccountPage.typeZipCodeAddress("00000");
         createAccountPage.selectCountryAddress("United States");
         createAccountPage.typeMobilePhoneAddress("1212121212");
+        createAccountPage.clickRegisterButton();
+
+        wait3Secs();
+
+        ConfirmationPage confirmationPage = new ConfirmationPage(getWebDriver());
+        Assert.assertTrue(confirmationPage.confirmUserLogged());
+
+
 
     }
 
@@ -40,13 +50,15 @@ public class CreateAccountFormatTest extends BaseTest {
         homePage.SignInClick();
         wait3Secs();
         SignInPage signInPage = new SignInPage(getWebDriver());
-        signInPage.sendKeysCreateAccountEmailAddress("alejandro@gmail.com");
+        signInPage.sendKeysCreateAccountEmailAddress(getRandomEmail());
         signInPage.clickCreateAccountButton();
         wait3Secs();
+
         CreateAccountPage createAccountPage = new CreateAccountPage(getWebDriver());
 
         createAccountPage.typeFirstNameCustomer("1121212");
         createAccountPage.typeLastNameCustomer("343434");
+        createAccountPage.typeEmail("21212.dd.com");
         createAccountPage.typePassword("pass");
         createAccountPage.typeFirstNameAddress("Alejo");
         createAccountPage.typeLastNameAddress("Ramirez");
@@ -56,5 +68,9 @@ public class CreateAccountFormatTest extends BaseTest {
         createAccountPage.typeZipCodeAddress("1273918273937");
         createAccountPage.selectCountryAddress("-");
         createAccountPage.typeMobilePhoneAddress("asasassqwq");
+        createAccountPage.clickRegisterButton();
+        wait3Secs();
+
+        Assert.assertTrue(createAccountPage.isAlertDisplayed());
     }
 }
