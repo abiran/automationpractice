@@ -33,18 +33,25 @@ public class AuthenticationTest extends BaseTest {
         HomePage homePage = new HomePage(getWebDriver());
 
         homePage.SignInClick();
-        signInPage.sendKeysCreateAccountEmailAddress("@nearsoft.com");
+        signInPage.sendKeysCreateAccountEmailAddress("thisisnotanemail");
         signInPage.clickCreateAccountButton();
         wait3Secs();
         assertTrue(signInPage.createAccountError());
     }
 
     @Test
-    public void createAccountWithRegisteredEmail(){
+    public void createAccountWithRegisteredEmail() throws InterruptedException {
+        SignInPage signInPage = new SignInPage(getWebDriver());
+        HomePage homePage = new HomePage(getWebDriver());
 
+        homePage.SignInClick();
+        signInPage.sendKeysCreateAccountEmailAddress("mcorona+test@nearsoft.com");
+        signInPage.clickCreateAccountButton();
+        wait3Secs();
+        assertTrue(signInPage.createAccountError());
     }
 
     @Test
-    public void createAccountWithalValidEmail(){}
+    public void createAccountWithValidEmail(){}
 
 }
