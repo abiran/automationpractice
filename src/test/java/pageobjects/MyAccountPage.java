@@ -12,6 +12,7 @@ public class MyAccountPage extends BasePage{
     String btnMyAddresses = "#center_column > div > div:nth-child(1) > ul > li:nth-child(3) > a > span";
     String btnMyPersonalInformation = "#center_column > div > div:nth-child(1) > ul > li:nth-child(4) > a > span";
     String btnMyWishlists = "#center_column > div > div:nth-child(2) > ul > li > a > span";
+    String pageHeading = "#center_column > h1";
 
 
     public MyAccountPage(WebDriver driver) {
@@ -36,6 +37,12 @@ public class MyAccountPage extends BasePage{
 
     public void clickbtnMyWishlists(){
         getDriver().findElement( By.className(btnMyWishlists) ).click();
+    }
+
+    public String getHeaderText(){
+        String headerTxt="";
+        headerTxt = getDriver().findElement(By.cssSelector(pageHeading)).getText();
+        return headerTxt;
     }
 
 }

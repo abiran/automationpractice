@@ -13,9 +13,9 @@ public class CreateAccountPage extends BasePage {
     String lastName = "customer_lastname";
     String email = "email";
     String password = "passwd";
-    String days = "#days";
-    String months = "#months";
-    String years = "#years";
+    String days = "days";
+    String months = "months";
+    String years = "years";
     String newsletter = "#newsletter";
     String specialOffers = "#optin";
     String firstNameAddress = "firstname";
