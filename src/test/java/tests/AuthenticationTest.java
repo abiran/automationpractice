@@ -9,10 +9,11 @@ import static org.testng.Assert.assertTrue;
 public class AuthenticationTest extends BaseTest {
 
     @Test
-    public void IsAuthenticationPageDisplayed(){
+    public void IsAuthenticationPageDisplayed() throws InterruptedException {
         HomePage homepage = new HomePage(getWebDriver());
         SignInPage signInPage = new SignInPage(getWebDriver());
         homepage.SignInClick();
+        wait3Secs();
         assertTrue(signInPage.getHeaderText().equals("AUTHENTICATION"));
     }
 
