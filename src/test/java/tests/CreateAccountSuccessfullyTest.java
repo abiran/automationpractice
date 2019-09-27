@@ -8,7 +8,7 @@ import pageobjects.SignInPage;
 
 import static org.testng.Assert.assertTrue;
 
-public class CreateAccountSuccessfully extends BaseTest{
+public class CreateAccountSuccessfullyTest extends BaseTest{
 
 
     @Test
