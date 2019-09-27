@@ -32,6 +32,7 @@ public class CreateAccountPage extends BasePage {
     String mobilePhoneAddress = "phone_mobile";
     String addressAliasAddress = "alias";
     String registerButton = "submitAccount";
+    By alert_danger = By.cssSelector("div[class='alert alert-danger']");
 
 
     public CreateAccountPage(WebDriver driver) {
@@ -118,5 +119,9 @@ public class CreateAccountPage extends BasePage {
 
     public void clickRegisterButton(){
         getDriver().findElement(By.id(registerButton)).click();
+    }
+
+    public Boolean isAlertDisplayed(){
+       return getDriver().findElement(alert_danger).isDisplayed();
     }
 }
