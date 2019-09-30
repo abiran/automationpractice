@@ -15,6 +15,7 @@ public class HomePage extends BasePage {
     private By womenOption = By.cssSelector("#block_top_menu > ul > li:nth-child(1) > a");
     private By dressesOption = By.cssSelector("#block_top_menu > ul > li:nth-child(2) > a");
     private By tshirtsOption = By.cssSelector("#block_top_menu > ul > li:nth-child(3) > a");
+    private By bestSellersLocator = By.linkText("Best sellers");
 
 
 
@@ -33,6 +34,14 @@ public class HomePage extends BasePage {
 
         getDriver().findElement(SignInLocator).click();
 
+    }
+
+    public void bestSellersClick(){
+        getDriver().findElement(bestSellersLocator).click();
+    }
+
+    public void tshirtsClick(){
+        getDriver().findElement(tshirtsOption).click();
     }
 
 }
