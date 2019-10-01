@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
@@ -22,6 +24,8 @@ public class HomePage extends BasePage {
     private By bestSellersLocator = By.linkText("Best sellers");
     private By cartLocator = By.className("shopping_cart");
     private By contentPopularTab = By.cssSelector("ul[class='product_list grid row homefeatured tab-pane active']");
+    private String modalLayerCartID = "layer_cart";
+    private String addToCartBtnLocator = "Add to cart";
 
 
     public HomePage(WebDriver driver) {
@@ -39,15 +43,15 @@ public class HomePage extends BasePage {
         getDriver().findElement(SignInLocator).click();
 
     }
-
+    //by Alejandro
     public void bestSellersClick(){
         getDriver().findElement(bestSellersLocator).click();
     }
-
+    //by Alejandro
     public void tshirtsClick(){
         getDriver().findElement(tshirtsOption).click();
     }
-
+    //by Alejandro
     public Boolean isCartEmpty(){
         boolean result = false;
         WebElement cartQty = getDriver().findElement(cartLocator).findElements(By.tagName("span")).get(0);
@@ -56,23 +60,31 @@ public class HomePage extends BasePage {
 
         return result;
     }
+    //by Alejandro
+    public void removeAllFromCart() throws InterruptedException {
 
-    public void removeAllFromCart(){
         while (!isCartEmpty()){
             Actions builder = new Actions(getDriver());
-            builder.moveToElement(getDriver().findElement(cartLocator)).build().perform();
+            builder.moveToElement(getDriver().findElement(cartLocator).findElements(By.tagName("a")).get(0)).build().perform();
+            Thread.sleep(2000);
             getDriver().findElement(By.className("ajax_cart_block_remove_link")).click();
         }
     }
 
-    //WIP by Alejandro
-//    public void add3PopularPorductsToCart(){
-//        List<WebElement> productList = getDriver().findElement(contentPopularTab).findElements(By.tagName("li"));
-//        Actions builder = new Actions(getDriver());
-//        for (int i = 0; i < 3; i++) {
-//            builder.moveToElement(productList.get(i).build().perform();
-//            getDriver().findElement(By.className("ajax_cart_block_remove_link")).click();
-//        }
-//    }
+    //by Alejandro
+    public void add3PopularPorductsToCart() throws InterruptedException {
+        List<WebElement> productList = getDriver().findElement(contentPopularTab).findElements(By.tagName("li"));
+        Actions builder = new Actions(getDriver());
+        for (int i = 0; i < 3; i++) {
+            builder.moveToElement(productList.get(i)).build().perform();
+            Thread.sleep(2000);
+            getDriver().findElement(By.linkText(addToCartBtnLocator)).click();
+
+            WebElement modal = getDriver().findElement(By.id(modalLayerCartID));
+            WebDriverWait ewait1 = new WebDriverWait(getDriver(),10);
+            ewait1.until(ExpectedConditions.visibilityOf(modal));
+            getDriver().findElement(By.className("cross")).click();
+        }
+    }
 
 }
