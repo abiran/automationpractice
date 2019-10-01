@@ -2,6 +2,10 @@ package pageobjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import java.util.List;
 
 
 //Lemma
@@ -16,8 +20,8 @@ public class HomePage extends BasePage {
     private By dressesOption = By.cssSelector("#block_top_menu > ul > li:nth-child(2) > a");
     private By tshirtsOption = By.cssSelector("#block_top_menu > ul > li:nth-child(3) > a");
     private By bestSellersLocator = By.linkText("Best sellers");
-
-
+    private By cartLocator = By.className("shopping_cart");
+    private By contentPopularTab = By.cssSelector("ul[class='product_list grid row homefeatured tab-pane active']");
 
 
     public HomePage(WebDriver driver) {
@@ -43,5 +47,32 @@ public class HomePage extends BasePage {
     public void tshirtsClick(){
         getDriver().findElement(tshirtsOption).click();
     }
+
+    public Boolean isCartEmpty(){
+        boolean result = false;
+        WebElement cartQty = getDriver().findElement(cartLocator).findElements(By.tagName("span")).get(0);
+        if (cartQty.getAttribute("style").equals("") || cartQty.getAttribute("style").equals("display: none;"))
+            result = true;
+
+        return result;
+    }
+
+    public void removeAllFromCart(){
+        while (!isCartEmpty()){
+            Actions builder = new Actions(getDriver());
+            builder.moveToElement(getDriver().findElement(cartLocator)).build().perform();
+            getDriver().findElement(By.className("ajax_cart_block_remove_link")).click();
+        }
+    }
+
+    //WIP by Alejandro
+//    public void add3PopularPorductsToCart(){
+//        List<WebElement> productList = getDriver().findElement(contentPopularTab).findElements(By.tagName("li"));
+//        Actions builder = new Actions(getDriver());
+//        for (int i = 0; i < 3; i++) {
+//            builder.moveToElement(productList.get(i).build().perform();
+//            getDriver().findElement(By.className("ajax_cart_block_remove_link")).click();
+//        }
+//    }
 
 }
