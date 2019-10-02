@@ -9,12 +9,13 @@ import static org.testng.Assert.assertTrue;
 public class CreateAccountSuccessfullyTest extends BaseTest{
 
 
-    @Test
+    @Test(groups = "Topete")
     public void createAccountSuccessfully() throws InterruptedException {
-        HomePage homePage = new HomePage(getWebDriver());
+        //HomePage homePage = new HomePage(getWebDriver());
+        HomePage homePage = withPage().getHomePage();
         homePage.SignInClick();
         wait3Secs();
-        SignInPage signInPage = new SignInPage(getWebDriver());
+        SignInPage signInPage = withPage().getSignInPage();
 
         signInPage.sendKeysCreateAccountEmailAddress(getRandomEmail());
         signInPage.clickCreateAccountButton();
