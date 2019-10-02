@@ -34,16 +34,21 @@ public class ValidatePersonalInfo extends BaseTest {
         homePage.SignInClick(); // Sign in into page
         wait3Secs();
 
-        SignInPage signInPage = new SignInPage(getWebDriver()); // Opens Sign In page
+        SignInPage signInPage = withPage().getSignInPage(); // Opens Sign In page
         signInPage.sendKeysCreateAccountEmailAddress(getRandomEmail()); // Type email to login
         signInPage.clickCreateAccountButton(); // Click button to login
         wait3Secs();
 
-        CreateAccountPage createAccountPage = withPage().getCreateAccountPage();
-        createAccountPage.typeLastNameCustomer();
-        createAccountPage.typeEmail();
-        createAccountPage.typePassword();
-        createAccountPage.setDOB();
+        CreateAccountPage createAccountPage = withPage().getCreateAccountPage(); // Instancia de Create account page
+        createAccountPage.typeLastNameCustomer("lastono");
+        createAccountPage.typeEmail("firsto.lastono@yopmail.com");
+        createAccountPage.typePassword("supersecretpassword");
+        createAccountPage.setDOB("01", "01", "1990");
+        wait3Secs();
+
+        createAccountPage.clickRegisterButton(); // Click button
+        // assertTrue(getWebDriver().findElement(By.cssSelector(".alert-danger")).isDisplayed());
+        createAccountPage.isAlertDisplayed(); // Confirms the error message is displayed
 
     }
 }
