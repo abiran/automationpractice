@@ -7,7 +7,7 @@ import pageobjects.TshirtsPage;
 
 public class TestAddTshirtToCart extends BaseTest {
 
-    @Test
+    @Test(groups = "Alejandro")
     public void testAddTshirtToCart() throws InterruptedException {
         HomePage homePage = new HomePage(getWebDriver());
         homePage.tshirtsClick();
