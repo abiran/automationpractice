@@ -13,7 +13,7 @@ public class CreateAccountFormatTest extends BaseTest {
         HomePage homePage = withPage().getHomePage();
         homePage.SignInClick();
         wait3Secs();
-        SignInPage signInPage = new SignInPage(getWebDriver());
+        SignInPage signInPage = withPage().getSignInPage();
         signInPage.sendKeysCreateAccountEmailAddress(getRandomEmail());
         signInPage.clickCreateAccountButton();
         wait3Secs();
