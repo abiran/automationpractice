@@ -8,7 +8,7 @@ public class TestSignInPage extends BaseTest{
     @Test
 
     public void createNewAccount(){
-        SignInPage signInPage = new SignInPage(getWebDriver());
+        SignInPage signInPage = withPage().getSignInPage();
         signInPage.sendKeysCreateAccountEmailAddress("newEmail@email.com");
         signInPage.clickCreateAccountButton();
     }
