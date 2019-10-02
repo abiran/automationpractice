@@ -5,15 +5,12 @@ import org.testng.annotations.Test;
 import pageobjects.ConfirmationPage;
 import pageobjects.CreateAccountPage;
 import pageobjects.HomePage;
-import pageobjects.MyAccountPage;
 import pageobjects.SignInPage;
-
-import static org.testng.Assert.assertTrue;
 
 //Alejandro Ramirez
 public class CreateAccountFormatTest extends BaseTest {
 
-    @Test
+    @Test(groups = {"smoke", "sanity"})
     public void requiredFieldsFormatSucceded() throws InterruptedException {
         HomePage homePage = new HomePage(getWebDriver());
         homePage.SignInClick();
@@ -47,7 +44,7 @@ public class CreateAccountFormatTest extends BaseTest {
 
     }
 
-    @Test
+    @Test(groups = "regression")
     public void requiredFieldsFormatFailed() throws InterruptedException {
         HomePage homePage = new HomePage(getWebDriver());
         homePage.SignInClick();
