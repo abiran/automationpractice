@@ -12,16 +12,16 @@ public class ValidatePersonalInfo extends BaseTest {
 
     @Test
     public void validatePersonalInfo() throws InterruptedException {
-        HomePage homePage = new HomePage(getWebDriver());
+        HomePage homePage = withPage().getHomePage();
         homePage.SignInClick(); // Sign in into page
         wait3Secs();
 
-        SignInPage signInPage = new SignInPage(getWebDriver());
+        SignInPage signInPage = withPage().getSignInPage();
         signInPage.sendKeysCreateAccountEmailAddress(getRandomEmail()); // Type email to login
         signInPage.clickCreateAccountButton(); // Click button to login
         wait3Secs();
 
-        CreateAccountPage createAccountPage = new CreateAccountPage(getWebDriver()); // Instancia de Create Account Page
+        CreateAccountPage createAccountPage = withPage().getCreateAccountPage(); // Instancia de Create Account Page
         createAccountPage.clickRegisterButton(); // Click button
         // assertTrue(getWebDriver().findElement(By.cssSelector(".alert-danger")).isDisplayed());
         createAccountPage.isAlertDisplayed(); // Confirms the error message is displayed
