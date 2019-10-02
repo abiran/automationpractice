@@ -14,15 +14,15 @@ public class ValidateRequiredPopulatedFieldsTest extends BaseTest {
     @Test(groups = "lemma")
     public void ValidateRequiredPopulatedFieldsTest() throws InterruptedException {
 
-    HomePage homePage = new HomePage(getWebDriver());
+    HomePage homePage = withPage().getHomePage();
     homePage.SignInClick();
 
-    SignInPage signInPage = new SignInPage(getWebDriver());
+    SignInPage signInPage = withPage().getSignInPage();
     signInPage.sendKeysCreateAccountEmailAddress(getRandomEmail());
     signInPage.clickCreateAccountButton();
     wait3Secs();
 
-    CreateAccountPage createAccountPage = new CreateAccountPage(getWebDriver());
+    CreateAccountPage createAccountPage = withPage().getCreateAccountPage();
     createAccountPage.clickRegisterButton();
 
     assertTrue(createAccountPage.isAlertDisplayed());
