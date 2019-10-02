@@ -7,7 +7,7 @@ import pageobjects.HomePage;
 
 public class BestSellersInStockTest extends BaseTest {
 
-    @Test
+    @Test(groups = "Alejandro")
     public void testBestSellersForStock() throws InterruptedException {
         HomePage homePage = new HomePage(getWebDriver());
         homePage.bestSellersClick();
@@ -19,7 +19,7 @@ public class BestSellersInStockTest extends BaseTest {
         Assert.assertTrue(bestSellersPage.checkForStocks());
     }
 
-    @Test
+    @Test(groups = "Alejandro")
     public void testBestSellersForStockZero() throws InterruptedException {
         HomePage homePage = new HomePage(getWebDriver());
         homePage.bestSellersClick();

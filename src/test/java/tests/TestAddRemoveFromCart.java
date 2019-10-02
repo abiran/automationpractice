@@ -6,7 +6,7 @@ import pageobjects.HomePage;
 
 public class TestAddRemoveFromCart extends BaseTest {
 
-    @Test
+    @Test(groups = "Alejandro")
     public void addThreeProductsToTheCart() throws InterruptedException {
         HomePage homePage = new HomePage(getWebDriver());
         homePage.add3PopularPorductsToCart();
@@ -14,7 +14,7 @@ public class TestAddRemoveFromCart extends BaseTest {
         Assert.assertFalse(homePage.isCartEmpty());
     }
 
-    @Test(priority = 1)
+    @Test(priority = 1, groups = "Alejandro")
     public void testRemoveFromCart() throws InterruptedException {
         HomePage homePage = new HomePage(getWebDriver());
 
