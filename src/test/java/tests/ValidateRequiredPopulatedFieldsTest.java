@@ -8,9 +8,10 @@ import pageobjects.SignInPage;
 
 import static org.testng.Assert.assertTrue;
 
+//Lemma Rivera
 public class ValidateRequiredPopulatedFieldsTest extends BaseTest {
 
-    @Test
+    @Test(groups = "lemma")
     public void ValidateRequiredPopulatedFieldsTest() throws InterruptedException {
 
     HomePage homePage = new HomePage(getWebDriver());
