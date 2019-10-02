@@ -28,4 +28,22 @@ public class ValidatePersonalInfo extends BaseTest {
 
     }
 
+    @Test
+    public void validateAllFieldsMinusFirstName() throws InterruptedException {
+        HomePage homePage = withPage().getHomePage();
+        homePage.SignInClick(); // Sign in into page
+        wait3Secs();
+
+        SignInPage signInPage = new SignInPage(getWebDriver()); // Opens Sign In page
+        signInPage.sendKeysCreateAccountEmailAddress(getRandomEmail()); // Type email to login
+        signInPage.clickCreateAccountButton(); // Click button to login
+        wait3Secs();
+
+        CreateAccountPage createAccountPage = withPage().getCreateAccountPage();
+        createAccountPage.typeLastNameCustomer();
+        createAccountPage.typeEmail();
+        createAccountPage.typePassword();
+        createAccountPage.setDOB();
+
+    }
 }
