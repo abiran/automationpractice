@@ -7,10 +7,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import pageobjects.PageFactory;
 
 public class BaseTest {
 
     private WebDriver driver;
+    private PageFactory _pageFactory;
 
     @BeforeMethod(alwaysRun = true)
     public void setUp() throws InterruptedException {
@@ -19,6 +21,7 @@ public class BaseTest {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(); //you could send setupChromeOptions as param
         driver.get("http://automationpractice.com/index.php");
+        _pageFactory = new PageFactory( driver );
         wait3Secs();
     }
 
@@ -33,8 +36,10 @@ public class BaseTest {
         return options;
     }
 
-    public WebDriver getWebDriver(){
-        return driver;
+
+
+    public PageFactory withPage(){
+        return _pageFactory;
     }
 
     public void wait3Secs() throws InterruptedException {

@@ -5,24 +5,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-public class BasePage {
-
-    private WebDriver _driver;
+public class BasePage extends PageFactory{
 
     public BasePage (WebDriver driver){
-        _driver = driver;
-    }
-
-    public WebDriver getDriver(){
-        return _driver;
+        super(driver);
     }
 
     public void click(String cssSelector){
-        _driver.findElement(By.cssSelector(cssSelector)).click();
+        getDriver().findElement(By.cssSelector(cssSelector)).click();
     }
 
     public void dropdownSelect(String element, String option){
-        WebElement dropdown = _driver.findElement(By.id(element));
+        WebElement dropdown = getDriver().findElement(By.id(element));
         Select dropdownSelect = new Select(dropdown);
         dropdownSelect.selectByVisibleText(option);
     }

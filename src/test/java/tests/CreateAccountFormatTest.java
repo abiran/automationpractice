@@ -12,7 +12,7 @@ public class CreateAccountFormatTest extends BaseTest {
 
     @Test(groups = {"smoke", "sanity"})
     public void requiredFieldsFormatSucceded() throws InterruptedException {
-        HomePage homePage = new HomePage(getWebDriver());
+        HomePage homePage = withPage().getHomePage();
         homePage.SignInClick();
         wait3Secs();
         SignInPage signInPage = new SignInPage(getWebDriver());
