@@ -36,7 +36,7 @@ public class CreateAccountFormatTest extends BaseTest {
 
         wait3Secs();
 
-        ConfirmationPage confirmationPage = new ConfirmationPage(getWebDriver());
+        ConfirmationPage confirmationPage = withPage().getConfirmationPage();
         Assert.assertTrue(confirmationPage.confirmUserLogged());
 
 
@@ -45,15 +45,15 @@ public class CreateAccountFormatTest extends BaseTest {
 
     @Test(groups = "regression")
     public void requiredFieldsFormatFailed() throws InterruptedException {
-        HomePage homePage = new HomePage(getWebDriver());
+        HomePage homePage = withPage().getHomePage();
         homePage.SignInClick();
         wait3Secs();
-        SignInPage signInPage = new SignInPage(getWebDriver());
+        SignInPage signInPage = withPage().getSignInPage();
         signInPage.sendKeysCreateAccountEmailAddress(getRandomEmail());
         signInPage.clickCreateAccountButton();
         wait3Secs();
 
-        CreateAccountPage createAccountPage = new CreateAccountPage(getWebDriver());
+        CreateAccountPage createAccountPage = withPage().getCreateAccountPage();
 
         createAccountPage.typeFirstNameCustomer("1121212");
         createAccountPage.typeLastNameCustomer("343434");
