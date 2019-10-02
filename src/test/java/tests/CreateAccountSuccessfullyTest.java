@@ -39,11 +39,11 @@ public class CreateAccountSuccessfullyTest extends BaseTest{
         createAccountPage.clickRegisterButton();
         wait3Secs();
 
-        MyAccountPage myAccountPage = new MyAccountPage(getWebDriver());
+        MyAccountPage myAccountPage = withPage().getMyAccountPage();
 
         assertTrue(myAccountPage.getHeaderText().equals("MY ACCOUNT"));
 
-        ConfirmationPage confirmationPage = new ConfirmationPage(getWebDriver());
+        ConfirmationPage confirmationPage = withPage().getConfirmationPage();
         Assert.assertTrue(confirmationPage.confirmUserLogged());
 
         System.out.println("rtr");
