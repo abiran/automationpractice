@@ -29,6 +29,13 @@ public class PageFactory {
         return new BestSellersPage( getDriver() );
     }
 
-
     public CreateAccountPage getCreateAccountPage() { return new CreateAccountPage( getDriver());}
+
+    public MyAccountPage getMyAccountPage(){
+        return new MyAccountPage(getDriver());
+    }
+
+    public ConfirmationPage getConfirmationPage(){
+        return new ConfirmationPage(getDriver());
+    }
 }
