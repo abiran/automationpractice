@@ -21,7 +21,7 @@ public class CreateAccountSuccessfullyTest extends BaseTest{
         signInPage.clickCreateAccountButton();
         wait3Secs();
 
-        CreateAccountPage createAccountPage = withPage().getCreateAccountPage()
+        CreateAccountPage createAccountPage = withPage().getCreateAccountPage();
         //wait3Secs();
         createAccountPage.selectGenderMale();
         createAccountPage.typeFirstNameCustomer("Rodrigo");
