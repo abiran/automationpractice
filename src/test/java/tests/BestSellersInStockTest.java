@@ -9,11 +9,11 @@ public class BestSellersInStockTest extends BaseTest {
 
     @Test(groups = "Alejandro")
     public void testBestSellersForStock() throws InterruptedException {
-        HomePage homePage = new HomePage(getWebDriver());
+        HomePage homePage = withPage().getHomePage();
         homePage.bestSellersClick();
         wait3Secs();
 
-        BestSellersPage bestSellersPage = new BestSellersPage(getWebDriver());
+        BestSellersPage bestSellersPage = withPage().getBestSellersPage();
         bestSellersPage.selectFilterForSorting("In stock");
         wait3Secs();
         Assert.assertTrue(bestSellersPage.checkForStocks());
@@ -21,11 +21,11 @@ public class BestSellersInStockTest extends BaseTest {
 
     @Test(groups = "Alejandro")
     public void testBestSellersForStockZero() throws InterruptedException {
-        HomePage homePage = new HomePage(getWebDriver());
+        HomePage homePage = withPage().getHomePage();
         homePage.bestSellersClick();
         wait3Secs();
 
-        BestSellersPage bestSellersPage = new BestSellersPage(getWebDriver());
+        BestSellersPage bestSellersPage = withPage().getBestSellersPage();
         bestSellersPage.selectFilterForSorting("In stock");
         wait3Secs();
         Assert.assertFalse(bestSellersPage.checkForStocks());

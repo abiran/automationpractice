@@ -8,7 +8,7 @@ public class TestAddRemoveFromCart extends BaseTest {
 
     @Test(groups = "Alejandro")
     public void addThreeProductsToTheCart() throws InterruptedException {
-        HomePage homePage = new HomePage(getWebDriver());
+        HomePage homePage = withPage().getHomePage();
         homePage.add3PopularPorductsToCart();
 
         Assert.assertFalse(homePage.isCartEmpty());
@@ -16,7 +16,7 @@ public class TestAddRemoveFromCart extends BaseTest {
 
     @Test(priority = 1, groups = "Alejandro")
     public void testRemoveFromCart() throws InterruptedException {
-        HomePage homePage = new HomePage(getWebDriver());
+        HomePage homePage = withPage().getHomePage();
 
         homePage.removeAllFromCart();
 
