@@ -17,4 +17,6 @@ public class PageFactory {
     public HomePage getHomePage(){
         return new HomePage( getDriver() );
     }
+
+    public CreateAccountPage getCreateAccountPage() { return new CreateAccountPage( getDriver());}
 }
