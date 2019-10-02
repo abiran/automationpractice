@@ -25,4 +25,6 @@ public class PageFactory {
         return new BestSellersPage( getDriver() );
     }
 
+
+    public CreateAccountPage getCreateAccountPage() { return new CreateAccountPage( getDriver());}
 }
