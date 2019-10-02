@@ -3,9 +3,7 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageobjects.ConfirmationPage;
-import pageobjects.CreateAccountPage;
-import pageobjects.HomePage;
-import pageobjects.SignInPage;
+import pageobjects.*;
 
 //Alejandro Ramirez
 public class CreateAccountFormatTest extends BaseTest {
@@ -20,7 +18,8 @@ public class CreateAccountFormatTest extends BaseTest {
         signInPage.clickCreateAccountButton();
         wait3Secs();
 
-        CreateAccountPage createAccountPage = new CreateAccountPage(getWebDriver());
+
+        CreateAccountPage createAccountPage = withPage().getCreateAccountPage();
 
         createAccountPage.typeFirstNameCustomer("Alejo");
         createAccountPage.typeLastNameCustomer("Ramirez");
