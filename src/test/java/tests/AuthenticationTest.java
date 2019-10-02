@@ -11,8 +11,8 @@ public class AuthenticationTest extends BaseTest {
 
     @Test
     public void IsAuthenticationPageDisplayed() throws InterruptedException {
-        HomePage homepage = new HomePage(getWebDriver());
-        SignInPage signInPage = new SignInPage(getWebDriver());
+        HomePage homepage = withPage().getHomePage();
+        SignInPage signInPage = withPage().getSignInPage();
         homepage.SignInClick();
         wait3Secs();
         assertTrue(signInPage.getHeaderText().equals("AUTHENTICATION"));
@@ -20,8 +20,8 @@ public class AuthenticationTest extends BaseTest {
 
     @Test
     public void createAccountWithEmptyEmail() throws InterruptedException {
-        SignInPage signInPage = new SignInPage(getWebDriver());
-        HomePage homePage = new HomePage(getWebDriver());
+        SignInPage signInPage = withPage().getSignInPage();
+        HomePage homePage = withPage().getHomePage();
 
         homePage.SignInClick();
         signInPage.clickCreateAccountButton();
@@ -31,8 +31,8 @@ public class AuthenticationTest extends BaseTest {
 
     @Test
     public void createAccountWithInvalidEmail() throws InterruptedException {
-        SignInPage signInPage = new SignInPage(getWebDriver());
-        HomePage homePage = new HomePage(getWebDriver());
+        SignInPage signInPage = withPage().getSignInPage();
+        HomePage homePage = withPage().getHomePage();
 
         homePage.SignInClick();
         signInPage.sendKeysCreateAccountEmailAddress("thisisnotanemail");
@@ -43,8 +43,8 @@ public class AuthenticationTest extends BaseTest {
 
     @Test
     public void createAccountWithRegisteredEmail() throws InterruptedException {
-        SignInPage signInPage = new SignInPage(getWebDriver());
-        HomePage homePage = new HomePage(getWebDriver());
+        SignInPage signInPage = withPage().getSignInPage();
+        HomePage homePage = withPage().getHomePage();
 
         homePage.SignInClick();
         signInPage.sendKeysCreateAccountEmailAddress("miriam_nearsoft@mailinator.com");
@@ -55,9 +55,9 @@ public class AuthenticationTest extends BaseTest {
 
     @Test
     public void createAccountWithValidEmail() throws InterruptedException {
-        SignInPage signInPage = new SignInPage(getWebDriver());
-        HomePage homePage = new HomePage(getWebDriver());
-        CreateAccountPage createAccountPage = new CreateAccountPage(getWebDriver());
+        SignInPage signInPage = withPage().getSignInPage();
+        HomePage homePage = withPage().getHomePage();
+        CreateAccountPage createAccountPage = withPage().getCreateAccountPage();
 
         homePage.SignInClick();
         signInPage.sendKeysCreateAccountEmailAddress("mcorona_test@mailinator.com");
