@@ -1,5 +1,6 @@
-- Fill all fields minus first name
-- Fill all fields minus last name
-- Fill all fields minus email
-- Fill all fields minus password
-- Fill all fields minus date of birth
+- Fill all fields minus first name - validateAllFieldsMinusFirstName()
+- Fill all fields minus last name - validateAllFieldsMinusLastName()
+- Fill all fields minus email - validateAllFieldsMinusEmail()
+- Fill all fields minus password - validateAllFieldsMinusPassword()
+- Fill all fields minus city - validateAllFieldsMinusCity()
+- Fill all fields minus Zip - validateAllFieldsMinusZip()

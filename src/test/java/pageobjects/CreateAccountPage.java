@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 public class CreateAccountPage extends BasePage {
 
 //Miriam Corona & Jorge Fimbres
@@ -50,85 +52,87 @@ public class CreateAccountPage extends BasePage {
         getDriver().findElement(By.id(radioButtonMrs)).click();
     }
 
-    public void typeFirstNameCustomer(String firstNameCustomer){
+    public void typeFirstNameCustomer(String firstNameCustomer) {
         getDriver().findElement(By.id(firstName)).sendKeys(firstNameCustomer);
     }
 
-    public void typeLastNameCustomer(String lastNameCustomer){
+    public void typeLastNameCustomer(String lastNameCustomer) {
         getDriver().findElement(By.id(lastName)).sendKeys(lastNameCustomer);
     }
 
-    public void typeEmail(String customerEmail){
+    public void typeEmail(String customerEmail) {
         getDriver().findElement(By.id(email)).sendKeys(customerEmail);
     }
 
-    public void typePassword(String customerPassword){
+    public void typePassword(String customerPassword) {
         getDriver().findElement(By.id(password)).sendKeys(customerPassword);
     }
 
-    public void setDOB(String dayDOB, String monthDOB, String yearDOB){
+    public void setDOB(String dayDOB, String monthDOB, String yearDOB) {
         getDriver().findElement(By.id(days)).sendKeys(dayDOB);
         getDriver().findElement(By.id(months)).sendKeys(monthDOB);
         getDriver().findElement(By.id(years)).sendKeys(yearDOB);
     }
 
-        // Your Address
+    // Your Address
 
-    public void typeFirstNameAddress(String firstNameAddressValue){
+    public void typeFirstNameAddress(String firstNameAddressValue) {
         getDriver().findElement(By.id(firstNameAddress)).sendKeys(firstNameAddressValue);
     }
 
-    public void typeLastNameAddress(String lastNameAddressValue){
+    public void typeLastNameAddress(String lastNameAddressValue) {
         getDriver().findElement(By.id(lastNameAddress)).sendKeys(lastNameAddressValue);
     }
 
-    public void typeCompanyNameAddress(String companyNameAddressValue){
+    public void typeCompanyNameAddress(String companyNameAddressValue) {
         getDriver().findElement(By.id(companyNameAddress)).sendKeys(companyNameAddressValue);
     }
 
-    public void typeAddress1Address(String address1AddressValue){
+    public void typeAddress1Address(String address1AddressValue) {
         getDriver().findElement(By.id(address1Address)).sendKeys(address1AddressValue);
     }
 
-    public void typeAddress2Address(String address2AddressValue){
+    public void typeAddress2Address(String address2AddressValue) {
         getDriver().findElement(By.id(address2Address)).sendKeys(address2AddressValue);
     }
 
-    public void typeCityAddress(String cityAddressValue){
+    public void typeCityAddress(String cityAddressValue) {
         getDriver().findElement(By.id(cityAddress)).sendKeys(cityAddressValue);
     }
 
-    public void selectStateAddress(String option){
+    public void selectStateAddress(String option) {
         dropdownSelect(stateDropdownAddress, option);
     }
 
 
-    public void typeZipCodeAddress(String zipCodeAddressValue){
+    public void typeZipCodeAddress(String zipCodeAddressValue) {
         getDriver().findElement(By.id(zipCodeAddress)).sendKeys(zipCodeAddressValue);
     }
 
-    public void selectCountryAddress(String option){
+    public void selectCountryAddress(String option) {
         dropdownSelect(countryDropdownAddress, option);
     }
 
-    public void typeMobilePhoneAddress(String mobilePhoneAddressValue){
+    public void typeMobilePhoneAddress(String mobilePhoneAddressValue) {
         getDriver().findElement(By.id(mobilePhoneAddress)).sendKeys(mobilePhoneAddressValue);
     }
 
-    public void typeAliasAddress(String aliasAddressValue){
+    public void typeAliasAddress(String aliasAddressValue) {
         getDriver().findElement(By.id(addressAliasAddress)).sendKeys(aliasAddressValue);
     }
 
-    public void clickRegisterButton(){
+    public void clickRegisterButton() {
         getDriver().findElement(By.id(registerButton)).click();
     }
 
-    public Boolean isAlertDisplayed(){
-       return getDriver().findElement(alert_danger).isDisplayed();
+    public Boolean isAlertDisplayed() {
+        return getDriver().findElement(alert_danger).isDisplayed();
     }
 
     //added by Lemma
-    public String getAlertMessage() {return getDriver().findElement(alert_danger).getText();}
+    public String getAlertMessage() {
+        return getDriver().findElement(alert_danger).getText();
+    }
 
     //added by miriam
     public Boolean isPageTitleDisplayed() {
@@ -136,4 +140,56 @@ public class CreateAccountPage extends BasePage {
         return title.getText().equals("CREATE AN ACCOUNT");
     }
 
+    //added by David
+    public Boolean isLastNameMissing() {
+        boolean result = false;
+        List<WebElement> errors = getDriver().findElement(alert_danger).findElements(By.tagName("li"));
+        for (int i = 0; i < errors.size(); i++) {
+            if (errors.get(i).getText().contains("lastname"))
+                result = true;
+        }
+        return result;
+    }
+
+    public Boolean isEmailMissing() {
+        boolean result = false;
+        List<WebElement> errors = getDriver().findElement(alert_danger).findElements(By.tagName("li"));
+        for (int i = 0; i < errors.size(); i++) {
+            if (errors.get(i).getText().contains("email"))
+                result = true;
+        }
+        return result;
+    }
+
+    public Boolean isPasswordMissing() {
+        boolean result = false;
+        List<WebElement> errors = getDriver().findElement(alert_danger).findElements(By.tagName("li"));
+        for (int i = 0; i < errors.size(); i++) {
+            if (errors.get(i).getText().contains("passwd"))
+                result = true;
+        }
+        return result;
+
+    }
+
+    public Boolean isCityMissing() {
+        boolean result = false;
+        List<WebElement> errors = getDriver().findElement(alert_danger).findElements(By.tagName("li"));
+        for (int i = 0; i < errors.size(); i++) {
+            if (errors.get(i).getText().contains("city"))
+                result = true;
+        }
+        return result;
+    }
+
+    public Boolean isZipMissing() {
+        boolean result = false;
+        List<WebElement> errors = getDriver().findElement(alert_danger).findElements(By.tagName("li"));
+        for (int i = 0; i < errors.size(); i++) {
+            if (errors.get(i).getText().contains("Zip/Postal"))
+                result = true;
+        }
+        return result;
+
+    }
 }
