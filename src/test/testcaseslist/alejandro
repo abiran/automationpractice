@@ -3,3 +3,5 @@
 -Test a t-shirt addition to the cart
 -Test add three popular products to the cart
 -Test a single product and all products removal from  the cart
+-Add a popular product to the wishes list without being logged
+-Add a popular product to the wishes list being logged

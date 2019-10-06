@@ -38,4 +38,8 @@ public class PageFactory {
     public ConfirmationPage getConfirmationPage(){
         return new ConfirmationPage(getDriver());
     }
+
+    public PopularProductMorePage getPopularProductMorePage(){
+        return new PopularProductMorePage(getDriver());
+    }
 }

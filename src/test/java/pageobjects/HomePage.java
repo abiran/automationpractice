@@ -26,6 +26,7 @@ public class HomePage extends BasePage {
     private By contentPopularTab = By.cssSelector("ul[class='product_list grid row homefeatured tab-pane active']");
     private String modalLayerCartID = "layer_cart";
     private String addToCartBtnLocator = "Add to cart";
+    private String moreBtnLocator = "More";
 
 
     public HomePage(WebDriver driver) {
@@ -85,6 +86,15 @@ public class HomePage extends BasePage {
             ewait1.until(ExpectedConditions.visibilityOf(modal));
             getDriver().findElement(By.className("cross")).click();
         }
+    }
+
+    //by Alejandro
+    public void seeMoreOfPopProduct() throws InterruptedException {
+        List<WebElement> productList = getDriver().findElement(contentPopularTab).findElements(By.tagName("li"));
+        Actions builder = new Actions(getDriver());
+        builder.moveToElement(productList.get(0)).build().perform();
+        Thread.sleep(2000);
+        getDriver().findElement(By.linkText(moreBtnLocator)).click();
     }
 
 }
