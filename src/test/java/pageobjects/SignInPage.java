@@ -56,6 +56,14 @@ public class SignInPage extends BasePage {
         getDriver().findElement(By.cssSelector(createAccountEmailAddressCSS)).sendKeys(email);
     }
 
+    public void sendKeysAlreadyRegisteredEmailAddress(String email){
+        getDriver().findElement(By.cssSelector(alreadyRegisteredEmailAddressCSS)).sendKeys(email);
+    }
+
+    public void sendKeysAlreadyRegisteredPassword(String pass){
+        getDriver().findElement(By.cssSelector(alreadyRegisteredPasswordCSS)).sendKeys(pass);
+    }
+
     public Boolean createAccountError(){
         return getDriver().findElement(By.cssSelector(createAccountErrorCSS)).isDisplayed();
     }

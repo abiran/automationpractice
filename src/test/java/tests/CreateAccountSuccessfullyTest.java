@@ -11,13 +11,13 @@ public class CreateAccountSuccessfullyTest extends BaseTest{
 
     @Test(groups = "Topete")
     public void createAccountSuccessfully() throws InterruptedException {
-        //HomePage homePage = new HomePage(getWebDriver());
         HomePage homePage = withPage().getHomePage();
         homePage.SignInClick();
         wait3Secs();
         SignInPage signInPage = withPage().getSignInPage();
 
-        signInPage.sendKeysCreateAccountEmailAddress(getRandomEmail());
+        //signInPage.sendKeysCreateAccountEmailAddress(getRandomEmail());
+        signInPage.sendKeysCreateAccountEmailAddress("rodrigotr@gmail.com");
         signInPage.clickCreateAccountButton();
         wait3Secs();
 

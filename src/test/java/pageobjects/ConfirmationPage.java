@@ -17,7 +17,7 @@ public class ConfirmationPage extends BasePage {
     }
 
     public Boolean confirmUserLogged(){
-        if (headerUserInfo.get(0).getText().contains("Sign out"))
+        if (headerUserInfo.get(0).getText().contains("Sign out") || headerUserInfo.get(1).getText().contains("Sign out"))
             return true;
         return false;
     }
