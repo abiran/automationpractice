@@ -34,7 +34,7 @@ public class BaseTest {
     @AfterMethod(alwaysRun = true)
     public void tearDown(ITestResult testResult) throws IOException {
         if(testResult.getStatus() == ITestResult.FAILURE){
-        String actualTest = this.getClass().getName() + "." + testResult.getMethod();
+        String actualTest = this.getClass().getName() + "." + testResult.getMethod().getMethodName();
         File scrFile = ((TakesScreenshot)driver).getScreenshotAs( OutputType.FILE);
         FileUtils.copyFile(scrFile, new File("target/screenshots/"+actualTest+".png"));}
         driver.quit();
