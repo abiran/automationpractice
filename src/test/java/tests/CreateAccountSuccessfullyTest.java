@@ -16,8 +16,8 @@ public class CreateAccountSuccessfullyTest extends BaseTest{
         wait3Secs();
         SignInPage signInPage = withPage().getSignInPage();
 
-        //signInPage.sendKeysCreateAccountEmailAddress(getRandomEmail());
-        signInPage.sendKeysCreateAccountEmailAddress("rodrigotr@gmail.com");
+        signInPage.sendKeysCreateAccountEmailAddress(getRandomEmail());
+        //signInPage.sendKeysCreateAccountEmailAddress("rodrigotr@gmail.com");
         signInPage.clickCreateAccountButton();
         wait3Secs();
 
