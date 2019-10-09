@@ -4,3 +4,8 @@
 - Fill all fields minus password - validateAllFieldsMinusPassword()
 - Fill all fields minus city - validateAllFieldsMinusCity()
 - Fill all fields minus Zip - validateAllFieldsMinusZip()
+
+// mvn test > corre todas las pruebas del proyecto desde consola.
+// mvn test -Dtest=JAVACLASS > corre todas las pruebas dentro de un Java Class específico
+// mvn test -Dtest=JAVACLASS#METHODNAME > corre la prueba específica (nombre) dentro de un Java Class
+// mvn test -Dgroups=GROUPNAME > corre las pruebas que pertenecen a un grupo específico
