@@ -20,7 +20,7 @@ public class BaseTest {
     public void setUp() throws InterruptedException {
 //        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/vendor/chromedriver");
 //        vendor no longer needed
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().version("77.0.3865.40").setup();
         driver = new ChromeDriver(setupChromeOptions()); //you could send setupChromeOptions as param
         driver.get("http://automationpractice.com/index.php");
         _pageFactory = new PageFactory( driver );
