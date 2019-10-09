@@ -7,7 +7,7 @@ import pageobjects.PopularProductMorePage;
 
 public class AddPopProduct2WishListTest extends BaseTest {
 
-    @Test
+    @Test(groups = "Alejandro")
     public void noLogAdditionTest() throws InterruptedException {
         HomePage homePage = withPage().getHomePage();
         homePage.seeMoreOfPopProduct();

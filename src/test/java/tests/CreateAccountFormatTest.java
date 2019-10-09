@@ -8,7 +8,7 @@ import pageobjects.*;
 //Alejandro Ramirez
 public class CreateAccountFormatTest extends BaseTest {
 
-    @Test(groups = {"smoke", "sanity"})
+    @Test(groups = "Alejandro")
     public void requiredFieldsFormatSucceded() throws InterruptedException {
         HomePage homePage = withPage().getHomePage();
         homePage.SignInClick();
@@ -43,7 +43,7 @@ public class CreateAccountFormatTest extends BaseTest {
 
     }
 
-    @Test(groups = "regression")
+    @Test(groups = "Alejandro")
     public void requiredFieldsFormatFailed() throws InterruptedException {
         HomePage homePage = withPage().getHomePage();
         homePage.SignInClick();
