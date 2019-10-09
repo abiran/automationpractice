@@ -11,7 +11,7 @@ import static org.testng.Assert.assertTrue;
 //Lemma Rivera
 public class ValidateRequiredPopulatedFieldsTest extends BaseTest {
 
-    @Test(groups = "lemma")
+    @Test(groups = "lemma", enabled = false)
     public void ValidateRequiredPopulatedFieldsTest() throws InterruptedException {
 
     HomePage homePage = withPage().getHomePage();
