@@ -39,6 +39,7 @@ public class BaseTest {
     public ChromeOptions setupChromeOptions(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments( "--headless" );
+        options.addArguments( "--no-sandbox" );
         return options;
     }
 
