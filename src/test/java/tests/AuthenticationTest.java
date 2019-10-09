@@ -18,7 +18,7 @@ public class AuthenticationTest extends BaseTest {
         assertTrue(signInPage.getHeaderText().equals("AUTHENTICATION"));
     }
 
-    @Test
+    @Test(groups = {"miriam", "jorge"})
     public void createAccountWithEmptyEmail() throws InterruptedException {
         SignInPage signInPage = withPage().getSignInPage();
         HomePage homePage = withPage().getHomePage();
@@ -29,7 +29,7 @@ public class AuthenticationTest extends BaseTest {
         assertTrue(signInPage.createAccountError());
     }
 
-    @Test
+    @Test(groups = "miriam")
     public void createAccountWithInvalidEmail() throws InterruptedException {
         SignInPage signInPage = withPage().getSignInPage();
         HomePage homePage = withPage().getHomePage();
@@ -41,7 +41,7 @@ public class AuthenticationTest extends BaseTest {
         assertTrue(signInPage.createAccountError());
     }
 
-    @Test
+    @Test(groups = "miriam")
     public void createAccountWithRegisteredEmail() throws InterruptedException {
         SignInPage signInPage = withPage().getSignInPage();
         HomePage homePage = withPage().getHomePage();
@@ -53,7 +53,7 @@ public class AuthenticationTest extends BaseTest {
         assertTrue(signInPage.createAccountError());
     }
 
-    @Test
+    @Test(groups = "miriam")
     public void createAccountWithValidEmail() throws InterruptedException {
         SignInPage signInPage = withPage().getSignInPage();
         HomePage homePage = withPage().getHomePage();

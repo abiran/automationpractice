@@ -11,7 +11,7 @@ import static org.testng.Assert.assertTrue;
 
 public class ValidatePersonalInfo extends BaseTest {
 
-    @Test
+    @Test (groups = "David")
     public void validatePersonalInfo() throws InterruptedException {
         HomePage homePage = withPage().getHomePage();
         homePage.SignInClick(); // Sign in into page
@@ -29,7 +29,7 @@ public class ValidatePersonalInfo extends BaseTest {
 
     }
 
-    @Test
+    @Test (groups = "David")
     public void validateAllFieldsMinusFirstName() throws InterruptedException {
         HomePage homePage = withPage().getHomePage();
         homePage.SignInClick(); // Sign in into page
@@ -53,7 +53,7 @@ public class ValidatePersonalInfo extends BaseTest {
 
     }
 
-    @Test
+    @Test (groups = "David")
     public void validateAllFieldsMinusLastName() throws InterruptedException {
         HomePage homePage = withPage().getHomePage();
         homePage.SignInClick(); // Sign in into page
@@ -75,7 +75,7 @@ public class ValidatePersonalInfo extends BaseTest {
         Assert.assertTrue(createAccountPage.isLastNameMissing());// Confirms that the last name is missing
     }
 
-    @Test
+    @Test (groups = "David")
     public void validateAllFieldsMinusEmail() throws InterruptedException {
         HomePage homePage = withPage().getHomePage();
         homePage.SignInClick(); // Sign in into page
@@ -97,7 +97,7 @@ public class ValidatePersonalInfo extends BaseTest {
         createAccountPage.isEmailMissing();      // Confirms that the email is missing
     }
 
-    @Test
+    @Test (groups = "David")
     public void validateAllFieldsMinusPassword() throws InterruptedException {
         HomePage homePage = withPage().getHomePage();
         homePage.SignInClick(); // Sign in into page
@@ -118,7 +118,7 @@ public class ValidatePersonalInfo extends BaseTest {
         createAccountPage.isPasswordMissing(); // Confirms that the password is missing
     }
 
-    @Test
+    @Test (groups = "David")
     public void validateAllFieldsMinusCity() throws InterruptedException {
         HomePage homePage = withPage().getHomePage();
         homePage.SignInClick(); // Sign in into page
@@ -139,7 +139,7 @@ public class ValidatePersonalInfo extends BaseTest {
         createAccountPage.isCityMissing(); // Confirms that the City is missing
     }
 
-    @Test
+    @Test (groups = "David")
     public void validateAllFieldsMinusZip() throws InterruptedException {
         HomePage homePage = withPage().getHomePage();
         homePage.SignInClick(); // Sign in into page
