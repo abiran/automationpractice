@@ -27,13 +27,13 @@ public class BaseTest {
 //        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/vendor/chromedriver");
 //        vendor no longer needed
 
-        //for jenkins -----------
-        DesiredCapabilities caps = new DesiredCapabilities();
-        //driver = new RemoteWebDriver(new URL(""),caps);
-        driver = new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"), caps);
+        //for jenkins in docker -----------
+        //DesiredCapabilities caps = new DesiredCapabilities();
+
+        //driver = new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"), caps);
         //-------------------------
 
-        //WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(setupChromeOptions()); //you could send setupChromeOptions as param
         driver.get("http://automationpractice.com/index.php");
         _pageFactory = new PageFactory( driver );
