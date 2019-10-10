@@ -2,15 +2,20 @@ package tests;
 
 import java.io.IOException;
 import java.security.SecureRandom;
+
+import com.sun.org.apache.bcel.internal.generic.NEW;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pageobjects.PageFactory;
+import java.net.URL;
+import java.net.MalformedURLException;
 
 public class BaseTest {
 
@@ -18,10 +23,17 @@ public class BaseTest {
     private PageFactory _pageFactory;
 
     @BeforeMethod(alwaysRun = true)
-    public void setUp() throws InterruptedException {
+    public void setUp() throws InterruptedException, MalformedURLException {
 //        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/vendor/chromedriver");
 //        vendor no longer needed
-        WebDriverManager.chromedriver().setup();
+
+        //for jenkins -----------
+        DesiredCapabilities caps = new DesiredCapabilities();
+        //driver = new RemoteWebDriver(new URL(""),caps);
+        driver = new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"), caps);
+        //-------------------------
+
+        //WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(setupChromeOptions()); //you could send setupChromeOptions as param
         driver.get("http://automationpractice.com/index.php");
         _pageFactory = new PageFactory( driver );
