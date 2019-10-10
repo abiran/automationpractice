@@ -6,6 +6,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -20,7 +21,8 @@ public class BaseTest {
     public void setUp() throws InterruptedException {
 //        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/vendor/chromedriver");
 //        vendor no longer needed
-        WebDriverManager.chromedriver().version("77.0.3865.40").setup();
+        WebDriverManager.chromedriver().clearPreferences();
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(setupChromeOptions()); //you could send setupChromeOptions as param
         driver.get("http://automationpractice.com/index.php");
         _pageFactory = new PageFactory( driver );
@@ -39,7 +41,6 @@ public class BaseTest {
     public ChromeOptions setupChromeOptions(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments( "--headless" );
-        options.addArguments( "--no-sandbox" );
         return options;
     }
 
