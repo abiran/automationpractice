@@ -30,7 +30,7 @@ public class BaseTest {
         //for jenkins -----------
         DesiredCapabilities caps = new DesiredCapabilities();
         //driver = new RemoteWebDriver(new URL(""),caps);
-        driver = new RemoteWebDriver(new URL("http://172.17.0.2:4444/wd/hub"), caps);
+        driver = new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"), caps);
         //-------------------------
 
         //WebDriverManager.chromedriver().setup();
@@ -52,6 +52,7 @@ public class BaseTest {
     public ChromeOptions setupChromeOptions(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments( "--headless" );
+        options.addArguments("'--no-sandbox'");
         return options;
     }
 
